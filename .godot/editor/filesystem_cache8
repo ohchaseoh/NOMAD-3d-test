@@ -1,0 +1,28 @@
+2a60927148abd1d33b818b535e306557
+::res://::1686790439
+ClickToMove.gd::GDScript::-1::1686734335::0::1::::<>CharacterBody3D<>::
+Cowboy_Test.glb::PackedScene::3646134205202324522::1686722550::1686725707::1::::<><>::
+cowboy_test.tscn::PackedScene::5677141369583875311::1686734336::0::1::::<><>::res://ClickToMove.gd
+default_env.tres::::-1::1686734336::0::1::::<><>::
+Environment.tres::Environment::8339466749736002914::1686733473::0::1::::<><>::
+icon.png::CompressedTexture2D::4912215513782062544::1686126996::1686725696::1::::<><>::
+Navigation.gd::GDScript::-1::1686725670::0::1::::<>Navigation<>::
+Pallete .material::StandardMaterial3D::-1::1686722550::0::1::::<><>::
+README.md::TextFile::-1::1686127404::0::1::::<><>::
+TestENV.gd::GDScript::-1::1686725670::0::1::::<>Node3D<>::
+TestENV.tscn::PackedScene::5141186843837838670::1686734336::0::1::::<><>::uid://cm5bxonfwy3s2<>uid://dq2x2fug0qpru
+::res://FBX/::1686697317
+::res://FBX/Animals/::1686697489
+Pallete .material::StandardMaterial3D::-1::1686697489::0::1::::<><>::
+::res://FBX/Buildings/::1686697491
+Pallete .material::StandardMaterial3D::-1::1686697486::0::1::::<><>::
+::res://FBX/Characters/::1686698197
+Pallete .material::StandardMaterial3D::-1::1686698197::0::1::::<><>::
+::res://FBX/Nature/::1686697493
+Pallete .material::StandardMaterial3D::-1::1686697485::0::1::::<><>::
+::res://FBX/Props/::1686697492
+Pallete .material::StandardMaterial3D::-1::1686697478::0::1::::<><>::
+::res://FBX/Vehicles/::1686697483
+Pallete .material::StandardMaterial3D::-1::1686697482::0::1::::<><>::
+::res://FBX/Weapons/::1686697482
+Pallete .material::StandardMaterial3D::-1::1686697482::0::1::::<><>::

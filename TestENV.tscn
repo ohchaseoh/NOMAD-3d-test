@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfioujgkodidq"]
+
+[ext_resource type="PackedScene" uid="uid://cm5bxonfwy3s2" path="res://cowboy_test.tscn" id="1_shx3t"]
+[ext_resource type="Environment" uid="uid://dq2x2fug0qpru" path="res://Environment.tres" id="2_k1s5a"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_32nr4"]
+vertices = PackedVector3Array(-9.07009, 0.0313814, -0.0343676, -9.07009, 0.0313814, 9.21563, -0.0700903, 0.0313814, 9.21563, -0.0700903, 0.0313814, -9.28437, -9.07009, 0.0313814, -9.28437, -9.07009, 0.0313814, -0.0343676, -0.0700903, 0.0313814, 9.21563, 9.17991, 0.0313814, 9.21563, 9.17991, 0.0313814, -0.0343676, 9.17991, 0.0313814, -0.0343676, 9.17991, 0.0313814, -9.28437, -0.0700903, 0.0313814, -9.28437)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 8), PackedInt32Array(5, 8, 6), PackedInt32Array(6, 8, 7), PackedInt32Array(11, 10, 9)]
+cell_height = 0.01
+
+[sub_resource type="BoxMesh" id="BoxMesh_lnlec"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sif63"]
+
+[node name="ENV" type="Node3D"]
+
+[node name="Cowboy_Test" parent="." instance=ExtResource("1_shx3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0326533, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1.7833, 0, 0, 0, 1.00164, 0, 0, 0, 2.57167, -0.00491381, 0.0165336, -0.00918007)
+navigation_mesh = SubResource("NavigationMesh_32nr4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(19.1402, 0, 0, 0, 0.0372371, 0, 0, 0, 19.5687, 0, 0, 0)
+mesh = SubResource("BoxMesh_lnlec")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/MeshInstance3D"]
+transform = Transform3D(0.479098, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_sif63")
+
+[node name="Camera3D" type="Camera3D" parent="." groups=["Camera"]]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 4, 4)
+top_level = true
+environment = ExtResource("2_k1s5a")
+fov = 90.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_k1s5a")
