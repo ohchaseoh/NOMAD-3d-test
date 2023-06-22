@@ -1,8 +1,11 @@
 extends CharacterBody3D
 
 @onready var navigation_agent := $NavigationAgent3D
-var char_speed = 1.5
-var char_speed_turn = 6
+@onready var camera := $PlayerCamera/Camera3D
+@export var char_speed = 1.5
+@export var char_speed_turn = 6
+@export var camera_follow_speed = 0.1
+@export var turn_speed = 0.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,16 +19,35 @@ func _process(delta):
 		return
 	move_to_point(delta, char_speed)
 	
+func _physics_process(_delta):
+	var camera_target = global_transform.origin + Vector3(0, 3, 4)
+	camera.global_transform.origin = camera.global_transform.origin.lerp(camera_target, camera_follow_speed)
 	
-func move_to_point(delta, speed):
+func move_to_point(_delta, speed):
 	var target_pos = navigation_agent.get_next_path_position()
 	var direction = global_position.direction_to(target_pos)
 	face_direction(target_pos)
 	velocity = direction * speed
 	move_and_slide()
 	
+func shortest_angular_distance(angle1, angle2):
+	var difference = fmod(angle2 - angle1, 2 * PI)
+	if difference < -PI:
+		difference += 2 * PI
+	elif difference > PI:
+			difference -= 2 * PI
+	return difference
+
 func face_direction(direction):
-	look_at(Vector3(-direction.x, global_position.y, -direction.z), Vector3.UP)
+	var target_direction = Vector3(-direction.x, 0, -direction.z).normalized()
+	var current_direction = Vector3(-transform.basis.z.x, 0, -transform.basis.z.z).normalized()
+
+	var current_angle = atan2(current_direction.x, current_direction.z)
+	var target_angle = atan2(target_direction.x, target_direction.z)
+	
+	var new_angle = current_angle + shortest_angular_distance(current_angle, target_angle)
+	
+	rotation.y = new_angle
 	
 func _input(event):
 	if Input.is_action_just_pressed("Left_Mouse"):
@@ -42,4 +64,5 @@ func _input(event):
 		var result = space.intersect_ray(ray_query)
 		print(result)
 		
-		navigation_agent.target_position = result.position
+		if "position" in result:
+			navigation_agent.target_position = result.position

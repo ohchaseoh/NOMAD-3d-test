@@ -2,3 +2,6 @@ res://TestENV.tscn
 res://camera/Camera3D.gd
 res://Environment.tres
 res://assets/models/cowboy_test.tscn
+res://assets/models/camera_follow.gd
+res://assets/models/cowboy_test.gd
+res://assets/models/PlayerCamera.gd

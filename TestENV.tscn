@@ -5,7 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://d1vr51wu7go3d" path="res://assets/obj/Prop_Barrel_1.obj" id="3_ymgbk"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_32nr4"]
-vertices = PackedVector3Array(-9.07009, 0.0313814, -0.0343676, -9.07009, 0.0313814, 9.21563, -0.0700903, 0.0313814, 9.21563, -0.0700903, 0.0313814, -9.28437, -9.07009, 0.0313814, -9.28437, -9.07009, 0.0313814, -0.0343676, -0.0700903, 0.0313814, 9.21563, 9.17991, 0.0313814, 9.21563, 9.17991, 0.0313814, -0.0343676, 9.17991, 0.0313814, -0.0343676, 9.17991, 0.0313814, -9.28437, -0.0700903, 0.0313814, -9.28437)
+vertices = PackedVector3Array(-9.0701, 0.0313815, -0.0343494, -9.0701, 0.0313815, 9.21565, -0.0700998, 0.0313815, 9.21565, -0.0700998, 0.0313815, -9.28435, -9.0701, 0.0313815, -9.28435, -9.0701, 0.0313815, -0.0343494, -0.0700998, 0.0313815, 9.21565, 9.1799, 0.0313815, 9.21565, 9.1799, 0.0313815, -0.0343494, 9.1799, 0.0313815, -0.0343494, 9.1799, 0.0313815, -9.28435, -0.0700998, 0.0313815, -9.28435)
 polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 8), PackedInt32Array(5, 8, 6), PackedInt32Array(6, 8, 7), PackedInt32Array(11, 10, 9)]
 cell_height = 0.01
 
@@ -17,9 +17,30 @@ cell_height = 0.01
 
 [node name="Cowboy_Test" parent="." instance=ExtResource("1_shx3t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0326533, 0)
+char_speed = null
+char_speed_turn = null
+camera_follow_speed = null
+turn_speed = null
+
+[node name="Assets" type="Node3D" parent="."]
+transform = Transform3D(0.996113, 0, 0, 0, 0.996113, 0, 0, 0, 0.996113, 0, 0, 0)
+
+[node name="PropBarrel1" type="MeshInstance3D" parent="Assets"]
+transform = Transform3D(1.0039, 0, 0, 0, 1.0039, 0, 0, 0, 1.0039, -2.31542, 0.03532, 4.04929)
+mesh = ExtResource("3_ymgbk")
+skeleton = NodePath("../..")
+
+[node name="PropBarrel2" type="MeshInstance3D" parent="Assets"]
+transform = Transform3D(1.0039, 0, 0, 0, 1.0039, 0, 0, 0, 1.0039, -2.50345, 0.03532, 3.55338)
+mesh = ExtResource("3_ymgbk")
+skeleton = NodePath("../..")
+
+[node name="PropBarrel3" type="MeshInstance3D" parent="Assets"]
+transform = Transform3D(1.00782, 0, 0, 0, 1.00782, 0, 0, 0, 1.00782, 2.87571, 0.0707777, -4.169)
+mesh = ExtResource("3_ymgbk")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1.7833, 0, 0, 0, 1.00164, 0, 0, 0, 2.57167, -0.00491381, 0.0165336, -0.00918007)
+transform = Transform3D(2.09013, 0, 0, 0, 1.00164, 0, 0, 0, 2.19188, -0.00491381, 0.0165336, -0.00918007)
 navigation_mesh = SubResource("NavigationMesh_32nr4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
@@ -34,7 +55,3 @@ shape = SubResource("BoxShape3D_sif63")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_k1s5a")
-
-[node name="PropBarrel1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.77032, 0.0351827, 2.56004)
-mesh = ExtResource("3_ymgbk")

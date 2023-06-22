@@ -1,5 +1,6 @@
-AnimationTree
 Node3D
+SpringArm3D
+AnimationTree
 WorldEnvironment
 CharacterBody3D
 Camera3D
