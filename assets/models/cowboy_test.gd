@@ -1,7 +1,8 @@
 extends CharacterBody3D
 
 @onready var navigation_agent := $NavigationAgent3D
-var char_speed = 1
+var char_speed = 1.5
+var char_speed_turn = 6
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,15 +10,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$AnimationTree.set("parameters/conditions/idle", navigation_agent.is_navigation_finished())
+	$AnimationTree.set("parameters/conditions/walk", !navigation_agent.is_navigation_finished())
 	if(navigation_agent.is_navigation_finished()):
 		return
 	move_to_point(delta, char_speed)
-	if move_and_slide():
-		$AnimationPlayer.play("Walking")
-	else:
-		$AnimationPlayer.play("Idle")
-	pass
-
+	
+	
 func move_to_point(delta, speed):
 	var target_pos = navigation_agent.get_next_path_position()
 	var direction = global_position.direction_to(target_pos)

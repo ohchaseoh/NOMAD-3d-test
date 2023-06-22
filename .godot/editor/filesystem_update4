@@ -1,3 +1,4 @@
 res://TestENV.tscn
+res://camera/Camera3D.gd
 res://Environment.tres
-res://cowboy_test.tscn
+res://assets/models/cowboy_test.tscn

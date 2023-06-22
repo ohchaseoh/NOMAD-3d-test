@@ -1,8 +1,9 @@
+AnimationTree
+Node3D
 WorldEnvironment
 CharacterBody3D
 Camera3D
 NavigationAgent3D
-Node3D
 CollisionShape3D
 StaticBody3D
 MeshInstance3D

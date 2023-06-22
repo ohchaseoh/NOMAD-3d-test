@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://br7hkec7fsl6a"
-path="res://.godot/imported/Cowboy_Test.glb-60d0d99d55df25014effa8175469e54f.scn"
+path="res://.godot/imported/Cowboy_Test.glb-b9ac4925911dfa9d6831b4394ac33d6c.scn"
 
 [deps]
 
-source_file="res://Cowboy_Test.glb"
-dest_files=["res://.godot/imported/Cowboy_Test.glb-60d0d99d55df25014effa8175469e54f.scn"]
+source_file="res://assets/models/Cowboy_Test.glb"
+dest_files=["res://.godot/imported/Cowboy_Test.glb-b9ac4925911dfa9d6831b4394ac33d6c.scn"]
 
 [params]
 
@@ -28,5 +28,12 @@ animation/fps=15
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Pallete ": {
+"use_external/enabled": true,
+"use_external/path": "res://Pallete .material"
+}
+}
+}
 gltf/embedded_image_handling=1
