@@ -1,11 +1,13 @@
+CharacterBody3D
+CollisionShape3D
 Node3D
+Label3D
+Label
 SpringArm3D
 AnimationTree
 WorldEnvironment
-CharacterBody3D
 Camera3D
 NavigationAgent3D
-CollisionShape3D
 StaticBody3D
 MeshInstance3D
 MultiMeshInstance3D

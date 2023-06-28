@@ -1,7 +1,10 @@
-res://TestENV.tscn
+res://assets/models/cowboy_test.tscn
+res://assets/models/cowboy_test.gd
 res://camera/Camera3D.gd
 res://Environment.tres
-res://assets/models/cowboy_test.tscn
-res://assets/models/camera_follow.gd
-res://assets/models/cowboy_test.gd
-res://assets/models/PlayerCamera.gd
+res://TestENV.tscn
+res://MoveHereNode.gd
+res://TestENV.gd
+res://PlayerCharacter.tscn
+res://PC_Main.tscn
+res://MoveHere.gd

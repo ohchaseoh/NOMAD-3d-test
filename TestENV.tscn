@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cfioujgkodidq"]
 
-[ext_resource type="PackedScene" uid="uid://cpu0rxmfjhdm6" path="res://assets/models/cowboy_test.tscn" id="1_shx3t"]
+[ext_resource type="PackedScene" uid="uid://wbt5x36vrqon" path="res://PC_Main.tscn" id="1_nrce2"]
 [ext_resource type="Environment" uid="uid://dq2x2fug0qpru" path="res://Environment.tres" id="2_k1s5a"]
 [ext_resource type="ArrayMesh" uid="uid://d1vr51wu7go3d" path="res://assets/obj/Prop_Barrel_1.obj" id="3_ymgbk"]
 
@@ -15,12 +15,7 @@ cell_height = 0.01
 
 [node name="ENV" type="Node3D"]
 
-[node name="Cowboy_Test" parent="." instance=ExtResource("1_shx3t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0326533, 0)
-char_speed = null
-char_speed_turn = null
-camera_follow_speed = null
-turn_speed = null
+[node name="PC_Main" parent="." instance=ExtResource("1_nrce2")]
 
 [node name="Assets" type="Node3D" parent="."]
 transform = Transform3D(0.996113, 0, 0, 0, 0.996113, 0, 0, 0, 0.996113, 0, 0, 0)
